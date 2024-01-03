@@ -33,6 +33,8 @@ function playRound(playerSelection, computerSelection) {
     else if (playerSelection == "scissors" && computerSelection == "paper") {
         playerWins++;
         return "You Win! Scissors beats Paper";
+    } else {
+        return "It's a tie !"
     }
 }
 
