@@ -1,5 +1,9 @@
 let options = ["rock", "paper", "scissors"];
 
+const rockBtn = document.getElementById('rockBtn');
+const paperBtn = document.getElementById('paperBtn');
+const scissorsBtn = document.getElementById('scissorsBtn');
+
 function getComputerChoice() {
     let computerChoice = Math.floor(Math.random() * options.length);
     return options[computerChoice];
