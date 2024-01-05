@@ -6,6 +6,10 @@ let computerWins = 0;
 const rockBtn = document.getElementById('rockBtn');
 const paperBtn = document.getElementById('paperBtn');
 const scissorsBtn = document.getElementById('scissorsBtn');
+const resultsContainer = document.getElementById('results');
+const resultParagraph = document.createElement('p');
+const playerScore = document.createElement('p');
+const computerScore = document.createElement('p');
 
 rockBtn.addEventListener('click', () => game("rock"));
 paperBtn.addEventListener('click', () => game("paper"));
@@ -15,7 +19,7 @@ function getComputerChoice() {
     let computerChoice = Math.floor(Math.random() * options.length);
     return options[computerChoice];
 }
-   
+
 
 function playRound(playerSelection, computerSelection) {
     playerSelection = playerSelection.toLowerCase();
@@ -49,19 +53,30 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function game(playerSelection) {
-        let computerSelection = getComputerChoice();
-        alert("You chose: " + playerSelection);
-        alert("Computer chose: " + computerSelection);
-        alert(playRound(playerSelection, computerSelection));
+    let computerSelection = getComputerChoice();
+    displayResults("You chose: " + playerSelection);
+    displayResults("Computer chose: " + computerSelection);
+    displayResults(playRound(playerSelection, computerSelection));
 
     if (playerWins == 3) {
-        alert("Congratulations! You have won the game.");
+        displayResults("Congratulations! You have won the game.");
         playerWins = 0;
         computerWins = 0;
     }
     else if (computerWins == 3) {
-        alert("You have lost the game");
+        displayResults("You have lost the game");
         playerWins = 0;
         computerWins = 0;
-    } 
+    }
+}
+function displayResults(message) {
+    if (resultParagraph) {
+        resultParagraph.remove
+    }
+    resultParagraph.textContent = message;
+    playerScore.textContent = "Your score: " + playerWins;
+    computerScore.textContent = "Computer score: " + computerWins;
+    resultsContainer.appendChild(resultParagraph);
+    resultsContainer.appendChild(playerScore);
+    resultsContainer.appendChild(computerScore);
 }
