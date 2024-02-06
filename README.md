@@ -20,3 +20,6 @@ This project is a web-based Rock, Paper, Scissors game that allows players to co
 ## Conclusion
 
 This project demonstrates fundamental web development skills, focusing on JavaScript for creating interactive applications directly in the web browser. It provides a solid foundation in programming logic and user interaction.
+
+### Live Preview
+https://kevinrivera21.github.io/odin-rock-paper-scissors/
